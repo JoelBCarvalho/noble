@@ -33,7 +33,11 @@
     "win32"
   ],
   "dependencies": {
-    "debug": "~2.2.0"
+    "axios": "^0.18.0",
+    "debug": "~2.2.0",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "moment": "^2.24.0"
   },
   "optionalDependencies": {
     "bluetooth-hci-socket": "^0.5.1",
