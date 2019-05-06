@@ -24,8 +24,10 @@ noble.on('discover', function(peripheral) {
     console.log(devMac + ' ' + devRssi);
  
     const data = JSON.stringify({
+      id: ,
       beacon: devMac,
-      rssi: devRssi
+      rssi: devRssi,
+      time: new Date()
     });
     var request = new http.ClientRequest({
       hostname: '',
