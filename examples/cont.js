@@ -1,3 +1,7 @@
+process.chdir(__dirname);
+
+require('dotenv').config();
+
 var noble = require('../index');
 var moment = require('moment');
 const axios = require('axios');
@@ -24,14 +28,14 @@ noble.on('discover', function(peripheral) {
     console.log(devMac + ' ' + devRssi);
  
     const data = JSON.stringify({
-      id: ,
+      id: process.env.RECEIVER_RFID,
       beacon: devMac,
       rssi: devRssi,
       time: new Date()
     });
     var request = new http.ClientRequest({
-      hostname: '',
-      port: 3000,
+      hostname: process.env.URL,
+      port: process.env.PORT_MONGO,
       path: '/api/users',
       method: 'POST',
       headers: {
